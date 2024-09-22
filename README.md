@@ -32,8 +32,9 @@ async function pollSomething() {
     for await (const result of poller) {
       console.log(result)
       // do something based on the result
-      break // to get out of loop and continue with try block
-      return result // just return the result
+      // break; to get out of loop and continue with try block
+      // or
+      // return result; just return the result
     }
   } catch (e) {
     if (e.message === 'Poll interrupted') {
@@ -97,6 +98,7 @@ export default customPoll
 import customPoll from './customPollGenerator'
 
 async function pollSomething() {
-  const poller = ...
+  const poller = createPoll(fn, 10, 1000)
+  ...
 }
 ```
