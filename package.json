@@ -1,0 +1,31 @@
+{
+  "name": "poll-generator",
+  "version": "0.0.1",
+  "description": "AsyncGenerator polling",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "keywords": [
+    "poll",
+    "polling",
+    "generator",
+    "async",
+    "await"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf dist && tsc -p .",
+    "copy": "cp package.json dist && cp README.md dist",
+    "publish": "cd dist && npm publish",
+    "deploy": "npm run build && npm run copy"
+  },
+  "author": "Viacheslav Afanasev <vyaches.afanas@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oldslav/poll-generator"
+  },
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^5.6.2"
+  }
+}
