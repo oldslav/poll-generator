@@ -20,14 +20,14 @@ function customizePollGenerator(
     fn: () => any,
     maxTries: number,
     time: number,
-    { signal } = {} as AbortController
+    controller?: AbortController
   ) {
-    if (maxTries == Infinity && !signal) {
+    if (maxTries == Infinity && !controller) {
       console.warn('Provide AbortController for infinite loop!')
     }
     let result
     do {
-      if (signal?.aborted) pollInterrupted(result)
+      if (controller?.signal.aborted) pollInterrupted(result)
       result = await fn()
       yield result
       await sleep(time)

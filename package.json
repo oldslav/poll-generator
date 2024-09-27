@@ -1,6 +1,6 @@
 {
   "name": "poll-generator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "AsyncGenerator polling",
   "main": "index.js",
   "types": "index.d.ts",
@@ -16,7 +16,7 @@
     "build": "rm -rf dist && tsc -p .",
     "copy": "cp package.json dist && cp README.md dist",
     "publish": "cd dist && npm publish",
-    "deploy": "npm run build && npm run copy"
+    "deploy": "npm run build && npm run copy && npm run publish"
   },
   "author": "Viacheslav Afanasev <vyaches.afanas@gmail.com>",
   "repository": {
